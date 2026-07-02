@@ -1,0 +1,1552 @@
+/* =============================================
+   Bistroteca & Pizzeria – Main Stylesheet
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+  --color-olive: #1b3322;
+  --color-cream: #fdfbf7;
+  --color-brown: #3d281d;
+  --color-red: #c0392b;
+  --color-gold: #d4a359;
+  --color-olive-light: #2a4a32;
+  --color-cream-dark: #f0ebe3;
+  --color-text: #3d281d;
+  --color-text-muted: #6b5344;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(27, 51, 34, 0.08);
+  --shadow-md: 0 8px 24px rgba(27, 51, 34, 0.12);
+  --shadow-lg: 0 16px 48px rgba(27, 51, 34, 0.16);
+
+  --transition: 0.3s ease;
+  --nav-height: 72px;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-olive);
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0.75rem auto 0;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-red);
+  color: var(--color-cream);
+}
+
+.btn-primary:hover {
+  background-color: #a93226;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-cream);
+  border: 2px solid var(--color-cream);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-cream);
+  color: var(--color-olive);
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  color: var(--color-brown);
+}
+
+.btn-gold:hover {
+  background-color: #c4924a;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-olive);
+  border: 2px solid var(--color-olive);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-olive);
+  color: var(--color-cream);
+}
+
+/* --- Navigation --- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  background-color: transparent; /* Initially completely transparent */
+  border-bottom: 1px solid rgba(253, 251, 247, 0.1);
+  transition: all var(--transition);
+}
+
+.nav.scrolled {
+  background-color: rgba(27, 51, 34, 0.95); 
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid rgba(27, 51, 34, 0.1);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-cream); /* White logo text on top */
+  line-height: 1.2;
+}
+
+.nav-logo span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(253, 251, 247, 0.8); /* Slightly transparent white for lines */
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold); /* Change underline to gold for better contrast */
+  transition: width var(--transition);
+}
+
+/* The active page or item under your finger will light up gold */
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-gold) !important;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Hidden line under the very last link in the menu */
+.nav-links li:last-child a {
+  border-bottom: none;
+}
+
+.nav-cta {
+  margin-left: 0.5rem;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-cream);
+  transition: all var(--transition);
+  border-radius: 2px;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--color-olive); /* A solid background into which the image will fade */
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+.hero-bg-image {
+  position: absolute;
+  inset: 0;               /* Expands to the entire green area */
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.25;          /* The image will be slightly faded/transparent */
+  z-index: 0;
+}
+.hero-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* The image will remain exactly centered */
+}
+.hero-bg-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* The image is clear in the center, fading smoothly into the olive color of the web towards the edges */
+  background: radial-gradient(circle, transparent 20%, var(--color-olive) 80%);
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(212, 163, 89, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(192, 57, 43, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 4rem 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 163, 89, 0.2);
+  border: 1px solid rgba(212, 163, 89, 0.4);
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  color: var(--color-cream);
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.hero-text {
+  color: rgba(253, 251, 247, 0.85);
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  max-width: 520px;
+  text-align: left; /* On the computer it will be on the left under the title */
+  margin-left: 0;   /* Ensures it doesn't center on a large screen */
+  text-wrap: balance;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-decoration {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  max-width: 520px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 163, 89, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-pizza-icon {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(8rem, 15vw, 14rem);
+  opacity: 0.12;
+  pointer-events: none;
+}
+/* --- Secrets Section --- */
+.secrets {
+  background-color: #DEDEA8;
+}
+
+.secrets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.secret-card {
+  background: #FFC56E;
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(27, 51, 34, 0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.secret-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.secret-icon {
+  width: 150px;              
+  height: 150px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  overflow: hidden;         
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-gold); /* Added gold border for elegant style */
+}
+.secret-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        
+}
+
+.secret-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.secret-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- Product Cards --- */
+.products {
+  background-color: #BFE1B6;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: var(--color-cream) !important; /* Change to a nice cream color for the website */
+  border-radius: var(--radius-md); 
+  overflow: hidden; 
+  /* Soft shadow that makes the card stand out from the background texture */
+  box-shadow: 0 8px 32px rgba(27, 51, 34, 0.06) !important; 
+  border: 1px solid rgba(27, 51, 34, 0.04); 
+  transition: transform var(--transition), box-shadow var(--transition); 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Effect when the card is hovered over (stands out in space) */
+.product-card:hover {
+  transform: translateY(-6px); /* The card will be lifted smoothly */
+  box-shadow: 0 12px 25px rgba(27, 51, 34, 0.12); /* The shadow beneath it softens and darkens */
+}
+
+.product-image {
+  height: 220px;          /* Sets a uniform height for all three windows */
+  width: 100%;
+  overflow: hidden;       /* Hides everything that overflows outside the tab */
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Crops photos automatically so they are not distorted */
+  object-position: center; /* Center the viewport exactly at the center of the pizza */
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--color-red);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+}
+
+/* Editing the inside of the card (text section) */
+.product-body {
+  padding: 1.75rem; /* More space (airiness) around the text */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-olive);
+  margin-bottom: 0.5rem;
+}
+
+.product-body p {
+  font-size: 0.95rem;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Align price to bottom */
+.product-footer {
+  margin-top: auto; 
+  padding-top: 1rem;
+  border-top: 1px solid rgba(27, 51, 34, 0.06); /* Fine line above price */
+}
+
+.product-price {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4F420D; /* Set the color for the price */
+}
+
+.product-price small {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* --- Menu Page --- */
+.page-hero {
+  /* Combination of dark overlay and background image */
+  background: linear-gradient(rgba(27, 51, 34, 0.75), rgba(27, 51, 34, 0.75)), url('obrazky/menu.webp');
+  background-size: cover; 
+  background-position: center; /* Center the image */
+  background-attachment: scroll; /* Classic scrolling (or "fixed" for parallax effect) */
+  padding: 6rem 0; /* Nice air space from above and below */
+  text-align: center; /* Align the text to the center */
+  color: #ffffff; /* White text to perfectly shine on the dark background */
+}
+
+.page-hero h1 {
+  color: var(--color-cream);
+  margin-bottom: 0.75rem;
+}
+
+.page-hero p {
+  color: rgba(253, 251, 247, 0.8);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 10 !important;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 2px solid var(--color-olive);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--color-olive);
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  z-index: 11 !important;
+  pointer-events: auto !important;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--color-olive);
+  color: var(--color-cream);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-item.hidden {
+  display: none !important;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.menu-item-header h3 {
+  flex: 1;
+}
+
+.menu-item-price {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-red);
+  white-space: nowrap;
+}
+
+.menu-item-desc {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.menu-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(27, 51, 34, 0.08);
+}
+
+.meta-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  background-color: var(--color-cream-dark);
+  color: var(--color-brown);
+}
+
+.meta-tag.allergen {
+  background-color: rgba(192, 57, 43, 0.1);
+  color: var(--color-red);
+}
+
+/* --- About Page --- */
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image {
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--color-olive-light), var(--color-olive));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden; /* This line will fix the rounding (cut off the sharp corners of the photo) */
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.about-content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about-content p {
+  color: var(--color-text-muted);
+}
+.about-content .section-label {
+  color: var(--color-red); /* Changes the color only for the label in this section */
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.about-feature {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-feature-icon {
+  width: 100%; /* Image will stretch to the full width of the white card */
+  height: 200px; /* Fixed height for a nice wide rectangle */
+  margin: 0 auto 1.5rem; /* More space between photo and text */
+  border-radius: var(--radius-md); /* Soft corner rounding to match the card */
+  overflow: hidden; /* Crop the corners of the photo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-feature-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* The photo fills the entire rectangle without stretching */
+  object-position: center; /* Keeps the center of the photo in focus */
+}
+
+.about-feature h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.about-feature p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.chef-quote {
+  background: linear-gradient(135deg, var(--color-olive), var(--color-olive-light));
+  border-radius: var(--radius-lg);
+  padding: 4rem 3rem;
+  text-align: center;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.chef-quote::before {
+  content: '\201C';
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  color: rgba(212, 163, 89, 0.3);
+  position: absolute;
+  top: 0.5rem;
+  left: 2rem;
+  line-height: 1;
+}
+
+.chef-quote blockquote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-style: italic;
+  color: var(--color-cream);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.chef-quote cite {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+}
+
+/* --- Reservation Form --- */
+.reservation-section {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.reservation-form {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  /* MORE PROMINENT SHADOW AND THICKER CARD BORDER */
+  box-shadow: 0 10px 30px rgba(27, 51, 34, 0.15);
+  border: 2px solid var(--color-olive); /* Solid dark olive border for the entire card */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-olive);
+  margin-bottom: 0.5rem;
+}
+
+/* HIGHLIGHTING INPUTS (BOXES) */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: #faf8f5; /* Slightly lighter cream for better contrast with white paper */
+  border: 2px solid #b2bcaf; /* Darker and more visible gray-green border */
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+/* EFFECT WHEN CLICKING INTO A BOX */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-olive); /* Changes the border to a deep olive color when typing */
+  background-color: #ffffff; /* The box lights up in pure white */
+  box-shadow: 0 0 0 4px rgba(27, 51, 34, 0.1); /* Elegant subtle aura around the active box */
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 1.25rem;
+}
+
+/* --- Contact Page --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(27, 51, 34, 0.06);
+}
+
+.contact-card h3 {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-info-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--color-cream-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contact-info-item strong {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.contact-info-item a {
+  color: var(--color-olive);
+  font-weight: 500;
+}
+
+.contact-info-item a:hover {
+  color: var(--color-red);
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(27, 51, 34, 0.06);
+  font-size: 0.95rem;
+  transition: all var(--transition);
+  border-radius: var(--radius-sm);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.hours-list li:last-child {
+  border-bottom: none;
+}
+
+.hours-list li.today {
+  background-color: var(--color-olive);
+  color: var(--color-cream);
+  font-weight: 600;
+  border-bottom-color: transparent;
+  margin: 0.25rem 0;
+}
+
+.hours-list li.today .hours-day {
+  color: var(--color-gold);
+}
+
+.hours-day {
+  font-weight: 500;
+}/* ==========================================================================
+   Fake Map Plugin with Google Widget (Bistroteca Style)
+   ========================================================================== */
+
+.fake-map-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* On mobile, align widget above map */
+  margin-top: 2rem;
+}
+
+.map-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+  filter: brightness(0.9) saturate(0.95);
+  border: 2px solid var(--color-olive);
+  box-shadow: var(--shadow-sm);
+}
+
+.map-widget {
+  background: var(--color-cream);
+  color: var(--color-olive);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 15px; /* Space for mobile viewing */
+  font-size: 0.85rem;
+  line-height: 1.4;
+  border: 1px solid rgba(27, 51, 34, 0.1);
+}
+
+.map-widget h4 {
+  font-family: var(--font-primary);
+  color: var(--color-olive);
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.map-widget .rating {
+  color: #fbbc04; /* Google gold for stars */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.map-widget .map-links {
+  margin-top: 0.85rem;
+  display: flex;
+  gap: 1.25rem;
+  border-top: 1px solid rgba(27, 51, 34, 0.1);
+  padding-top: 0.6rem;
+}
+
+.map-widget .map-links a {
+  color: #1a73e8; /* Authentic Google blue for links */
+  font-weight: 600;
+  text-transform: none;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+}
+
+.map-widget .map-links a:hover {
+  text-decoration: underline;
+  color: var(--color-red);
+}
+
+/* Location checkpoint (pin) */
+.map-pin {
+  position: absolute;
+  top: 50%; /* Center to the center of the map image */
+  left: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 5;
+  text-align: center;
+  pointer-events: none; /* So as not to prevent clicking on the map */
+}
+
+.pin-icon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
+  animation: mapBounce 2s infinite ease-in-out;
+}
+
+.pin-label {
+  background: var(--color-olive);
+  color: var(--color-cream);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-top: -2px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gold);
+}
+
+/* Subtle animation of a pin jumping */
+@keyframes mapBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ── RESPONSIVENESS: FOR LARGE SCREEN (TABLETS AND COMPUTERS) ── */
+@media (min-width: 768px) {
+  .fake-map-container {
+    display: block; 
+  }
+  .map-widget {
+    position: absolute; /* Widget jumps inside the map */
+    top: 25px;
+    left: 25px;
+    z-index: 10;
+    width: 290px;
+    margin-bottom: 0;
+  }
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-red), #922b21);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  text-align: center;
+  color: var(--color-cream);
+}
+
+.cta-banner h2 {
+  color: var(--color-cream);
+  margin-bottom: 0.75rem;
+}
+
+.cta-banner p {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+/* --- Footer --- */
+.footer {
+  background-color: var(--color-olive);
+  color: rgba(253, 251, 247, 0.8);
+  padding: 4rem 0 0;
+  margin-bottom: 0 !important; /* Ensure that nothing is created below the footer */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(253, 251, 247, 0.1);
+  
+  /* This pushes the columns to the center and doesn't let them escape to the edges */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.footer-brand h3 {
+  font-family: var(--font-heading);
+  color: var(--color-cream);
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(253, 251, 247, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: background var(--transition);
+}
+
+.footer-social a:hover {
+  background: var(--color-gold);
+  color: var(--color-brown);
+}
+
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-col ul a {
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.footer-col ul a:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+
+  /* This will ensure that the bottom bar aligns perfectly with the columns above it */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+}
+
+.footer-bottom a {
+  color: var(--color-gold);
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* --- Utility --- */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mt-4 { margin-top: 4rem; }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .secrets-grid,
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-image {
+    max-height: 360px;
+    aspect-ratio: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    /* This will revert to an elegant dark olive instead of white */
+    background: var(--color-olive) !important;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 0;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+    border-bottom: 2px solid var(--color-gold); /* Gold design line at the bottom of the menu */
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center; /* This will center the items in the middle of the display */
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+    /* Cream readable text instead of white on white */
+    color: var(--color-cream) !important;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(253, 251, 247, 0.1); /* Delicate divider between items */
+  }
+
+  .nav-cta {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-cta .btn {
+    width: 100%;
+  }
+
+  .hero-pizza-icon {
+    display: none;
+  }
+
+  .secrets-grid,
+  .products-grid,
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Support for mobile image layouts */
+  .menu-item {
+    display: flex !important;
+    flex-direction: column !important; /* This line will rotate elements under itself */
+    gap: 1.25rem !important;
+    align-items: stretch !important; /* Here flex-start has been changed to stretch so that the texts use the full width */
+    background-color: rgba(253, 251, 247, 0.9) !important;
+    padding: 1.25rem !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: 0 2px 10px rgba(27, 51, 34, 0.03) !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .chef-quote {
+    padding: 3rem 1.5rem;
+  }
+
+  .reservation-form {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+  display: flex;
+  gap: 1rem; /* Space between buttons */
+  justify-content: center; /* Centering */
+  flex-wrap: wrap; /* If the buttons don't fit next to each other, the second one will jump below the first one */
+  margin-top: 2rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-actions {
+    flex-direction: column; /* On very small phones, the buttons will be one below the other */
+    align-items: stretch; /* The buttons will stretch to the same width */
+    gap: 0.75rem; /* The space between them below each other */
+    padding: 0.1rem; /* So that they don't push completely to the edges of the screen */
+  }
+  
+  .hero-actions .btn {
+    text-align: center; /* Centers the text inside the button */
+    width: 100%; /* Full width */
+  }
+  .hero {
+    padding-top: 6rem !important; /* Creates space under the navigation menu so that the banner doesn't intrude */
+    padding-bottom: 4rem !important; /* Space under the buttons */
+    min-height: auto !important; /* Removes the fixed height, if any, so that the text can breathe */
+  }
+  /* 2. Spacing directly inside text content */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem; /* Automatically creates even spacing between banner, H1, text, and buttons */
+  }
+
+  /* 3. Manual fuse for the gap under the banner */
+  .hero-badge {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  /* 4. Slightly reduced title on small mobiles so it doesn't break into multiple lines */
+  .hero h1 {
+    font-size: 2rem !important;
+    line-height: 1.25;
+  }
+}
+/* ==========================================================================
+   GLOBAL MENU BACKGROUND STYLES (Works on PC and mobile)
+   ========================================================================== */
+.menu-section-bg {
+  position: relative !important;
+  background-color: var(--color-cream-dark) !important; /* Cream darker background color */
+  z-index: 1 !important;
+}
+
+/* Pseudo-element inserts a faded graphic into the background of the entire section */
+.menu-section-bg::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: url('obrazky/background.webp') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.20 !important; /* Gently fade the image */
+  z-index: -1 !important;
+}
+
+/* To make the food cards shine nicely on a darker background, we'll give them a white background */
+.menu-grid .menu-item {
+  background-color: #ffffff !important;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.hero-text-responsive {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+/* Global styles for custom modal window */
+.custom-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(27, 51, 34, 0.6); /* Olive-dark background darkening */
+  backdrop-filter: blur(5px); /* Soft background blur */
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.custom-modal-content {
+  background-color: var(--color-cream);
+  padding: 3rem 2rem;
+  border-radius: var(--radius-lg);
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-gold);
+  transform: translateY(-30px);
+  transition: transform 0.3s ease;
+}
+
+.custom-modal.show .custom-modal-content {
+  transform: translateY(0);
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--color-olive);
+  color: var(--color-gold);
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  border: 2px solid var(--color-gold);
+}
+
+.custom-modal-content h2 {
+  margin-bottom: 1rem;
+  color: var(--color-olive);
+}
+
+.custom-modal-content p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  white-space: pre-line; /* Preserve line breaks from JS */
+}
+/* --- Language Switcher Styles --- */
+.nav-links .lang-switch {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links .lang-switch a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-gold);
+  border: 1px solid rgba(212, 163, 89, 0.3); /* Delicate gold frame */
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.nav-links .lang-switch a:hover {
+  color: var(--color-cream);
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/* Adaptation for mobile display (hamburger menu) */
+@media (max-width: 768px) {
+  .nav-links .lang-switch {
+    justify-content: center;
+    margin: 1rem 0; /* Creates a nice gap between the Contact and the booking button */
+  }
+  
+  .nav-links .lang-switch a {
+    font-size: 1rem; /* Slightly larger on mobile due to finger clicking */
+    padding: 6px 16px;
+  }
+}
+
+#close-modal-btn {
+  width: 100%;
+}
+
+/* When the screen is reduced to mobile (below 500px), center it to the title */
+@media (max-width: 500px) {
+  .hero-text-responsive {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+.menu-item-content {
+  padding: 1.5rem !important;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+ }
+}

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jedálny lístok Bistroteca & Pizzeria – pizza, cestoviny, dezerty a nápoje pripravené z talianskych surovín.">
+  <title>Menu | Bistroteca & Pizzeria</title>
+  <link rel="icon" type="image/png" href="obrazky/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .menu-item-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: var(--radius, 12px) var(--radius, 12px) 0 0;
+      background: #e9e4d4;
+    }
+    .menu-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .menu-item-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        Bistroteca
+        <span>& Pizzeria</span>
+      </a>
+      <button class="nav-toggle" aria-label="Otvoriť menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+	    <li><a href="index.html" class="active">Domov</a></li>
+	    <li><a href="menu.html">Menu</a></li>
+	    <li><a href="o-nas.html">O nás</a></li>
+	    <li><a href="rezervacia.html">Rezervácia</a></li>
+	    <li><a href="kontakt.html">Kontakt</a></li>	  
+	    <li class="lang-switch"><a href="en/index.html" title="Switch to English">EN</a></li>	  
+	    <li class="nav-cta"><a href="rezervacia.html" class="btn btn-primary">Rezervovať stôl</a></li>
+	 </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Jedálny lístok</h1>
+      <p>Autentické talianske chute pripravené z najkvalitnejších surovín. Vyberte si podľa chuti.</p>
+    </div>
+  </section>
+
+  <section class="section menu-section-bg">
+    <div class="container">
+      
+      <div class="menu-filters">
+        <button class="filter-btn active" data-filter="all">Všetko</button>
+        <button class="filter-btn" data-filter="pizza">Pizza</button>
+        <button class="filter-btn" data-filter="cestoviny">Cestoviny</button>
+        <button class="filter-btn" data-filter="dezerty">Dezerty</button>
+        <button class="filter-btn" data-filter="napoje">Nápoje</button>
+      </div>
+
+      <div class="menu-grid">
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="obrazky/margherita.webp" alt="Margherita DOC" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Margherita DOC</h3>
+              <span class="menu-item-price">8,90 €</span>
+            </div>
+            <p class="menu-item-desc">San Marzano omáčka, fior di latte, čerstvá bazalka, extra panenský olivový olej.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">450 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="obrazky/piccante.webp" alt="Diavola" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Diavola</h3>
+              <span class="menu-item-price">10,50 €</span>
+            </div>
+            <p class="menu-item-desc">Piccante saláma, mozarella, čili olej, sušené oregano.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">480 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="obrazky/Quattro.webp" alt="Quattro Formaggi" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Quattro Formaggi</h3>
+              <span class="menu-item-price">11,90 €</span>
+            </div>
+            <p class="menu-item-desc">Mozarella, gorgonzola, parmezán, taleggio, med.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">470 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="obrazky/Funghi.webp" alt="Prosciutto e Funghi" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Prosciutto e Funghi</h3>
+              <span class="menu-item-price">11,50 €</span>
+            </div>
+            <p class="menu-item-desc">Parma prosciutto, huby, mozarella, rukola po upečení.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">490 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="obrazky/Marinara.webp" alt="Marinara" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Marinara</h3>
+              <span class="menu-item-price">7,50 €</span>
+            </div>
+            <p class="menu-item-desc">San Marzano omáčka, cesnak, oregano, extra panenský olivový olej. Bez syra.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">420 g</span>
+              <span class="meta-tag allergen">1</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="obrazky/Capricciosa.webp" alt="Capricciosa" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Capricciosa</h3>
+              <span class="menu-item-price">10,90 €</span>
+            </div>
+            <p class="menu-item-desc">Šunka, huby, artičoky, olivy, mozarella, sušené oregano.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">500 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="cestoviny">
+          <div class="menu-item-image">
+            <img src="obrazky/Carbonara.webp" alt="Spaghetti Carbonara" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Spaghetti Carbonara</h3>
+              <span class="menu-item-price">9,90 €</span>
+            </div>
+            <p class="menu-item-desc">Guanciale, vajcia, pecorino romano, čierne korenie. Autentický rímsky recept.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">350 g</span>
+              <span class="meta-tag allergen">1, 3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="cestoviny">
+          <div class="menu-item-image">
+            <img src="obrazky/Tagliatelle.webp" alt="Tagliatelle al Ragù" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Tagliatelle al Ragù</h3>
+              <span class="menu-item-price">10,50 €</span>
+            </div>
+            <p class="menu-item-desc">Domáce tagliatelle, pomaly dusené hovädzie ragù bolognese, parmezán.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">380 g</span>
+              <span class="meta-tag allergen">1, 3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="cestoviny">
+          <div class="menu-item-image">
+            <img src="obrazky/Penne.webp" alt="Penne all'Arrabbiata" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Penne all'Arrabbiata</h3>
+              <span class="menu-item-price">8,50 €</span>
+            </div>
+            <p class="menu-item-desc">Penne, pikantná paradajková omáčka, cesnak, čili, petržlen.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">340 g</span>
+              <span class="meta-tag allergen">1</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="cestoviny">
+          <div class="menu-item-image">
+            <img src="obrazky/Ravioli.webp" alt="Ravioli di Ricotta" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Ravioli di Ricotta</h3>
+              <span class="menu-item-price">11,90 €</span>
+            </div>
+            <p class="menu-item-desc">Domáce ravioli plnené ricottou a špenátom, maslová šalviová omáčka.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">320 g</span>
+              <span class="meta-tag allergen">1, 3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="dezerty">
+          <div class="menu-item-image">
+            <img src="obrazky/Tiramisu.webp" alt="Tiramisu" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Tiramisu</h3>
+              <span class="menu-item-price">5,90 €</span>
+            </div>
+            <p class="menu-item-desc">Klasický taliansky dezert – mascarpone, espresso, savoiardi, kakao.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">150 g</span>
+              <span class="meta-tag allergen">1, 3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="dezerty">
+          <div class="menu-item-image">
+            <img src="obrazky/Cotta.webp" alt="Panna Cotta" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Panna Cotta</h3>
+              <span class="menu-item-price">4,90 €</span>
+            </div>
+            <p class="menu-item-desc">Vanilková panna cotta s omáčkou z lesných ovocí.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">130 g</span>
+              <span class="meta-tag allergen">3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="dezerty">
+          <div class="menu-item-image">
+            <img src="obrazky/Affogato.webp" alt="Affogato al Caffè" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Affogato al Caffè</h3>
+              <span class="menu-item-price">4,50 €</span>
+            </div>
+            <p class="menu-item-desc">Kopček vanilkovej zmrzliny zaliatej horúcim espessom.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">120 g</span>
+              <span class="meta-tag allergen">3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="napoje">
+          <div class="menu-item-image">
+            <img src="obrazky/Limonada.webp" alt="Domáca Limonáda" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Domáca Limonáda</h3>
+              <span class="menu-item-price">3,50 €</span>
+            </div>
+            <p class="menu-item-desc">Čerstvá citrónová limonáda s mätou a ľadom. 0,4 l</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">400 ml</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="napoje">
+          <div class="menu-item-image">
+            <img src="obrazky/Chianti.webp" alt="Chianti Classico" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Chianti Classico</h3>
+              <span class="menu-item-price">4,90 €</span>
+            </div>
+            <p class="menu-item-desc">Talianske červené víno z Toskánska. Pohár 0,15 l</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">150 ml</span>
+              <span class="meta-tag allergen">12</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="napoje">
+          <div class="menu-item-image">
+            <img src="obrazky/Espresso.webp" alt="Espresso" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Espresso</h3>
+              <span class="menu-item-price">2,20 €</span>
+            </div>
+            <p class="menu-item-desc">Talianske espresso z pražiarne Lavazza.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">30 ml</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="napoje">
+          <div class="menu-item-image">
+            <img src="obrazky/Peroni.webp" alt="Peroni Nastro Azzurro" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Peroni Nastro Azzurro</h3>
+              <span class="menu-item-price">3,90 €</span>
+            </div>
+            <p class="menu-item-desc">Talianske svetlé pivo. Fľaša 0,33 l</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">330 ml</span>
+              <span class="meta-tag allergen">1</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="text-center mt-4" style="color: var(--color-text-muted); font-size: 0.85rem;">
+        Alergény: 1 – lepok, 3 – vajcia, 7 – mlieko, 12 – oxid siričitý
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Bistroteca & Pizzeria</h3>
+          <p>Pravá neapolská pizza pečená na dreve. Remeselná talianska kuchyňa s láskou k detailom a kvalitným surovinám priamo z Talianska.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">in</a>
+            <a href="#" aria-label="Google">G</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigácia</h4>
+          <ul>
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="o-nas.html">O nás</a></li>
+            <li><a href="rezervacia.html">Rezervácia</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Otváracie hodiny</h4>
+          <ul>
+            <li>Po – Št: 11:00 – 22:00</li>
+            <li>Pia – So: 11:00 – 23:00</li>
+            <li>Nedeľa: 12:00 – 21:00</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+421901234567">+421 502 502 502</a></li>
+            <li><a href="mailto:info@example.sk">info@example.sk</a></li>
+            <li>Renderovská 403, Pizzanovce</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Bistroteca & Pizzeria. Všetky práva vyhradené.</span>      
+        <span class="footer-author">Created by <a href="https://mawebstudio.netlify.app/" target="_blank">Maroš Herman</a></span>      
+        <a href="kontakt.html">Kontaktujte nás</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

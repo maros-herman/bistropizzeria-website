@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bistroteca & Pizzeria menu – pizza, pasta, desserts and drinks prepared with Italian ingredients.">
+  <title>Menu | Bistroteca & Pizzeria</title>
+  <link rel="icon" type="/image/png" href="../obrazky/favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .menu-item-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: var(--radius, 12px) var(--radius, 12px) 0 0;
+      background: #e9e4d4;
+    }
+    .menu-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .menu-item-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        Bistroteca
+        <span>& Pizzeria</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+	    <li><a href="index.html" class="active">Home</a></li>
+	    <li><a href="menu.html">Menu</a></li>
+	    <li><a href="about.html">About Us</a></li>
+	    <li><a href="reservation.html">Reservation</a></li>
+	    <li><a href="contact.html">Contact</a></li>   	  
+	    <li class="lang-switch"><a href="../index.html" title="Prepnúť do slovenčiny">SK</a></li>      	  
+	    <li class="nav-cta"><a href="reservation.html" class="btn btn-primary">Book a Table</a></li>
+	  </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Menu</h1>
+      <p>Authentic Italian flavors prepared with the highest quality ingredients. Choose according to your taste.</p>
+    </div>
+  </section>
+
+  <section class="section menu-section-bg">
+    <div class="container">
+      
+      <div class="menu-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pizza">Pizza</button>
+        <button class="filter-btn" data-filter="cestoviny">Pasta</button>
+        <button class="filter-btn" data-filter="dezerty">Desserts</button>
+        <button class="filter-btn" data-filter="napoje">Drinks</button>
+      </div>
+
+      <div class="menu-grid">
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="../obrazky/margherita.webp" alt="Margherita DOC" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Margherita DOC</h3>
+              <span class="menu-item-price">€8.90</span>
+            </div>
+            <p class="menu-item-desc">San Marzano sauce, fior di latte, fresh basil, extra virgin olive oil.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">450 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="../obrazky/piccante.webp" alt="Diavola" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Diavola</h3>
+              <span class="menu-item-price">€10.50</span>
+            </div>
+            <p class="menu-item-desc">Piccante salami, mozzarella, chili oil, dried oregano.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">480 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="../obrazky/Quattro.webp" alt="Quattro Formaggi" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Quattro Formaggi</h3>
+              <span class="menu-item-price">€11.90</span>
+            </div>
+            <p class="menu-item-desc">Mozarella, gorgonzola, parmesan, taleggio, honey</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">470 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="../obrazky/Funghi.webp" alt="Prosciutto e Funghi" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Prosciutto e Funghi</h3>
+              <span class="menu-item-price">€11.50</span>
+            </div>
+            <p class="menu-item-desc">Parma prosciutto, mushrooms, mozzarella, arugula after baking.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">490 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="../obrazky/Marinara.webp" alt="Marinara" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Marinara</h3>
+              <span class="menu-item-price">€7.50</span>
+            </div>
+            <p class="menu-item-desc">San Marzano sauce, garlic, oregano, extra virgin olive oil. No cheese.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">420 g</span>
+              <span class="meta-tag allergen">1</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="pizza">
+          <div class="menu-item-image">
+            <img src="../obrazky/Capricciosa.webp" alt="Capricciosa" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Capricciosa</h3>
+              <span class="menu-item-price">€10.90</span>
+            </div>
+            <p class="menu-item-desc">Ham, mushrooms, artichokes, olives, mozzarella, dried oregano.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">500 g</span>
+              <span class="meta-tag allergen">1, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="cestoviny">
+          <div class="menu-item-image">
+            <img src="../obrazky/Carbonara.webp" alt="Spaghetti Carbonara" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Spaghetti Carbonara</h3>
+              <span class="menu-item-price">€9.90</span>
+            </div>
+            <p class="menu-item-desc">Guanciale, eggs, pecorino romano, black pepper. Authentic Roman recipe.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">350 g</span>
+              <span class="meta-tag allergen">1, 3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="cestoviny">
+          <div class="menu-item-image">
+            <img src="../obrazky/Tagliatelle.webp" alt="Tagliatelle al Ragù" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Tagliatelle al Ragù</h3>
+              <span class="menu-item-price">€10.50</span>
+            </div>
+            <p class="menu-item-desc">Homemade tagliatelle, slow-cooked beef ragù bolognese, parmesan.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">380 g</span>
+              <span class="meta-tag allergen">1, 3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="cestoviny">
+          <div class="menu-item-image">
+            <img src="../obrazky/Penne.webp" alt="Penne all'Arrabbiata" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Penne all'Arrabbiata</h3>
+              <span class="menu-item-price">€8.50</span>
+            </div>
+            <p class="menu-item-desc">Penne, spicy tomato sauce, garlic, chili, parsley.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">340 g</span>
+              <span class="meta-tag allergen">1</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="cestoviny">
+          <div class="menu-item-image">
+            <img src="../obrazky/Ravioli.webp" alt="Ravioli di Ricotta" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Ravioli di Ricotta</h3>
+              <span class="menu-item-price">€11.90</span>
+            </div>
+            <p class="menu-item-desc">Homemade ravioli filled with ricotta and spinach, butter sage sauce.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">320 g</span>
+              <span class="meta-tag allergen">1, 3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="dezerty">
+          <div class="menu-item-image">
+            <img src="../obrazky/Tiramisu.webp" alt="Tiramisu" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Tiramisu</h3>
+              <span class="menu-item-price">€5.90</span>
+            </div>
+            <p class="menu-item-desc">Classic Italian dessert – mascarpone, espresso, savoiardi, cocoa.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">150 g</span>
+              <span class="meta-tag allergen">1, 3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="dezerty">
+          <div class="menu-item-image">
+            <img src="../obrazky/Cotta.webp" alt="Panna Cotta" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Panna Cotta</h3>
+              <span class="menu-item-price">€4.90</span>
+            </div>
+            <p class="menu-item-desc">Vanilla panna cotta with forest fruit sauce.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">130 g</span>
+              <span class="meta-tag allergen">3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="dezerty">
+          <div class="menu-item-image">
+            <img src="../obrazky/Affogato.webp" alt="Affogato al Caffè" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Affogato al Caffè</h3>
+              <span class="menu-item-price">€4.50</span>
+            </div>
+            <p class="menu-item-desc">A scoop of vanilla ice cream poured over hot espresso.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">120 g</span>
+              <span class="meta-tag allergen">3, 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="napoje">
+          <div class="menu-item-image">
+            <img src="../obrazky/Limonada.webp" alt="Homemade Lemonade" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Homemade Lemonade</h3>
+              <span class="menu-item-price">€3.50</span>
+            </div>
+            <p class="menu-item-desc">Fresh lemonade with mint and ice. 0.4 l</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">400 ml</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="napoje">
+          <div class="menu-item-image">
+            <img src="../obrazky/Chianti.webp" alt="Chianti Classico" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Chianti Classico</h3>
+              <span class="menu-item-price">€4.90</span>
+            </div>
+            <p class="menu-item-desc">Italian red wine from Tuscany. Cup 0.15 l</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">150 ml</span>
+              <span class="meta-tag allergen">12</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="napoje">
+          <div class="menu-item-image">
+            <img src="../obrazky/Espresso.webp" alt="Espresso" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Espresso</h3>
+              <span class="menu-item-price">€2.20</span>
+            </div>
+            <p class="menu-item-desc">Italian espresso from the Lavazza roaster.</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">30 ml</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="napoje">
+          <div class="menu-item-image">
+            <img src="../obrazky/Peroni.webp" alt="Peroni Nastro Azzurro" loading="lazy">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Peroni Nastro Azzurro</h3>
+              <span class="menu-item-price">€3.90</span>
+            </div>
+            <p class="menu-item-desc">Italian light beer. Bottle 0.33 l</p>
+            <div class="menu-item-meta">
+              <span class="meta-tag">330 ml</span>
+              <span class="meta-tag allergen">1</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="text-center mt-4" style="color: var(--color-text-muted); font-size: 0.85rem;">
+        Allergens: 1 – gluten, 3 – eggs, 7 – milk, 12 – sulfur dioxide
+      </p>
+    </div>
+  </section>
+
+  </section>
+  
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Bistroteca & Pizzeria</h3>
+          <p>Authentic Neapolitan wood-fired pizza. Artisanal Italian cuisine with a love for detail and quality ingredients directly from Italy.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">in</a>
+            <a href="#" aria-label="Google">G</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Opening Hours</h4>
+		  <ul>
+		    <li>Mon – Thu: 11 AM – 10 PM</li>
+		    <li>Fri – Sat: 11 AM – 11 PM</li>
+		    <li>Sunday: 12 PM – 9 PM</li>
+		  </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+421901234567">+421 502 502 502</a></li>
+            <li><a href="mailto:info@example.sk">info@example.sk</a></li>
+            <li>Renderovská 403, Pizzanovce</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+	    <span>&copy; 2026 Bistroteca & Pizzeria. All rights reserved.</span>	  
+	    <span class="footer-author">Created by <a href="https://mawebstudio.netlify.app/" target="_blank">Maroš Herman</a></span>	  
+	    <a href="contact.html">Contact Us</a>
+	  </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

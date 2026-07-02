@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rezervujte si stôl v Bistroteca & Pizzeria online. Rýchlo, jednoducho a bez komplikácií.">
+  <title>Rezervácia | Bistroteca & Pizzeria</title>
+  <link rel="icon" type="image/png" href="obrazky/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        Bistroteca
+        <span>& Pizzeria</span>
+      </a>
+      <button class="nav-toggle" aria-label="Otvoriť menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+	    <li><a href="index.html" class="active">Domov</a></li>
+	    <li><a href="menu.html">Menu</a></li>
+	    <li><a href="o-nas.html">O nás</a></li>
+	    <li><a href="rezervacia.html">Rezervácia</a></li>
+	    <li><a href="kontakt.html">Kontakt</a></li>	  
+	    <li class="lang-switch"><a href="en/index.html" title="Switch to English">EN</a></li>	  
+	    <li class="nav-cta"><a href="rezervacia.html" class="btn btn-primary">Rezervovať stôl</a></li>
+	 </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Rezervácia stola</h1>
+      <p>Vyplňte formulár a my sa vám ozveme s potvrdením. Tešíme sa na vašu návštevu!</p>
+    </div>
+  </section>
+
+  <section class="section menu-section-bg">
+
+  <!-- FORM -->
+  <section class="section">
+    <div class="container reservation-section">
+      <form class="reservation-form" novalidate>
+        <div class="form-group">
+          <label for="meno">Meno a priezvisko *</label>
+          <input type="text" id="meno" name="meno" placeholder="napr. Ján Novák" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telefon">Telefón *</label>
+          <input type="tel" id="telefon" name="telefon" placeholder="napr. +421 401 401 401" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="osoby">Počet osôb *</label>
+            <select id="osoby" name="osoby" required>
+              <option value="">Vyberte</option>
+              <option value="1">1 osoba</option>
+              <option value="2">2 osoby</option>
+              <option value="3">3 osoby</option>
+              <option value="4">4 osoby</option>
+              <option value="5">5 osôb</option>
+              <option value="6">6 osôb</option>
+              <option value="7">7 osôb</option>
+              <option value="8">8 osôb</option>
+              <option value="9+">9 a viac</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="datum">Dátum *</label>
+            <input type="date" id="datum" name="datum" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cas">Čas *</label>
+          <select id="cas" name="cas" required>
+            <option value="">Vyberte čas</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="poznamka">Poznámka</label>
+          <textarea id="poznamka" name="poznamka" placeholder="Napr. detská stolička, alergie, oslava narodenín..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">Odoslať rezerváciu</button>
+
+        <p class="form-note">Rezerváciu potvrdíme telefonicky do 2 hodín. Pre urgentné rezervácie volajte <a href="tel:+421502502502">+421 502 502 502</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Bistroteca & Pizzeria</h3>
+          <p>Pravá neapolská pizza pečená na dreve. Remeselná talianska kuchyňa s láskou k detailom a kvalitným surovinám priamo z Talianska.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">in</a>
+            <a href="#" aria-label="Google">G</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigácia</h4>
+          <ul>
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="o-nas.html">O nás</a></li>
+            <li><a href="rezervacia.html">Rezervácia</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Otváracie hodiny</h4>
+          <ul>
+            <li>Po – Št: 11:00 – 22:00</li>
+            <li>Pia – So: 11:00 – 23:00</li>
+            <li>Nedeľa: 12:00 – 21:00</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+421502502502">+421 502 502 502</a></li>
+            <li><a href="mailto:info@example.sk">info@example.sk</a></li>
+            <li>Renderovská 403, Pizzanovce</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+	    <span>&copy; 2026 Bistroteca & Pizzeria. Všetky práva vyhradené.</span>	  
+	    <span class="footer-author">Created by <a href="https://mawebstudio.netlify.app/" target="_blank">Maroš Herman</a></span>	  
+	    <a href="kontakt.html">Kontaktujte nás</a>
+	  </div>
+    </div>
+  </footer>
+  
+  <div id="reservation-modal" class="custom-modal">
+  <div class="custom-modal-content">
+    <div class="success-icon">✓</div>
+    <h2>Rezervácia prijatá!</h2>
+    <p id="modal-message">Tu sa zobrazí text...</p>
+    <button id="close-modal-btn" class="btn btn-primary">Rozumiem</button>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
